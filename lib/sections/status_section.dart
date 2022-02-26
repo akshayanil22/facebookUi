@@ -8,15 +8,21 @@ class StatusSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: ProfileImage(image: 'assets/dq.jpg',isOnline: false,),
-      title: const TextField(
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          hintText:  'What\'s on your mind?',
-          hintStyle: TextStyle(
-            color: Colors.black
-          )
+      title: Container(
+        height:50,
+        child: OutlinedButton(
+          child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text('Write something here...\nഎന്തെങ്കിലും എഴുതൂ...',style: TextStyle(
+                color: Colors.black,fontWeight: FontWeight.w400
+              ),)),
+          onPressed: (){},
+          style: OutlinedButton.styleFrom(
+            shape: StadiumBorder(),
+          ),
         ),
       ),
+      trailing: Icon(Icons.photo,color: Colors.green,),
     );
   }
 }
