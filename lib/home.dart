@@ -11,9 +11,6 @@ class Home extends StatelessWidget {
     return ListView(
           children: [
             StatusSection(),
-            Divider(
-              thickness: 1,
-            ),
             HeaderButtonSection(),
             Divider(
               thickness: 10,

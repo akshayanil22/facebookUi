@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/header_button_widgets.dart';
+
 class HeaderButtonSection extends StatelessWidget {
   HeaderButtonSection({Key? key}) : super(key: key);
 
@@ -7,48 +9,20 @@ class HeaderButtonSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 40,
+    return Container(
+      margin: EdgeInsets.only(top: 10),
+      color: Colors.grey[100],
+      height: 60,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          TextButton.icon(
-            onPressed: () {},
-            icon: Icon(
-              Icons.video_call,
-              color: Colors.red,
-            ),
-            label: Text(
-              'Live',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          verticalDivider,
-          TextButton.icon(
-            onPressed: () {},
-            icon: Icon(
-              Icons.photo,
-              color: Colors.green,
-            ),
-            label: Text(
-              'Photo',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          verticalDivider,
-          TextButton.icon(
-            onPressed: () {},
-            icon: Icon(
-              Icons.video_call,
-              color: Colors.purple,
-            ),
-            label: Text(
-              'Room',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
+          HeaderButtonWidgets(buttonIcon: Icons.video_library,buttonName: 'Reel',buttonColor: Colors.pinkAccent),
+          HeaderButtonWidgets(buttonIcon: Icons.video_call, buttonName: 'Room',buttonColor: Colors.deepPurpleAccent,),
+          HeaderButtonWidgets(buttonIcon: Icons.group, buttonName: 'Group', buttonColor: Colors.blue),
+          HeaderButtonWidgets(buttonIcon: Icons.video_call, buttonName: 'Live', buttonColor: Colors.red)
         ],
       ),
     );
   }
 }
+
