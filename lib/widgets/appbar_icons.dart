@@ -10,13 +10,17 @@ class AppBarIcons extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(5),
       decoration: BoxDecoration(
-        color: Colors.grey[400],
+        color: Colors.blueGrey[50],
         shape: BoxShape.circle,
       ),
-      child: IconButton(
-        icon: Icon(iconButton),
-        color: Colors.black,
-        onPressed: (){},
+      child: Container(
+        width: 40,
+        height: 40,
+        child: IconButton(
+          icon: Icon(iconButton),
+          color: Colors.black,
+          onPressed: (){},
+        ),
       ),
     );
   }

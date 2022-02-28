@@ -7,7 +7,7 @@ class StatusSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: ProfileImage(image: 'assets/dq.jpg',isOnline: false,),
+      leading: ProfileImage(image: 'assets/mohanlal.jfif',isOnline: false,blueBorder: false,),
       title: Container(
         height:50,
         child: OutlinedButton(

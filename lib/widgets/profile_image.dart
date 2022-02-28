@@ -4,8 +4,9 @@ class ProfileImage extends StatelessWidget {
 
   final String image;
   final bool isOnline;
+  final bool blueBorder;
 
-  ProfileImage({required this.image,this.isOnline=true});
+  ProfileImage({required this.image,this.isOnline=true,this.blueBorder=true});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +14,16 @@ class ProfileImage extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.only(right: 10),
+          decoration: blueBorder ? BoxDecoration(
+            border: Border.all(
+              color: Colors.blue,
+              width: 2,
+            ),
+            borderRadius: BorderRadius.circular(100)
+          ) : BoxDecoration(),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(100),
-            child: Image.asset(image,width: 50,height: 50,fit: BoxFit.cover),
+            child: Image.asset(image,width: 40,height: 40,fit: BoxFit.cover),
           ),
         ),
         isOnline ? Positioned(

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             elevation: 0,
             backgroundColor: Colors.white,
-            title: Text('facebook',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blue),),
+            title: Text('facebook',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.blue[700]),),
             actions: [
               AppBarIcons(iconButton: Icons.search),
               AppBarIcons(iconButton: Icons.message),
