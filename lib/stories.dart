@@ -1,3 +1,4 @@
+import 'package:facebook_ui/widgets/add_button_widgets.dart';
 import 'package:facebook_ui/widgets/stories_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -33,23 +34,7 @@ class Stories extends StatelessWidget {
                   )
                 ],
               ),
-              Positioned(
-                left: 50,
-                bottom: 45,
-                child: Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(100),
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 2
-                    )
-                  ),
-                  child: Icon(Icons.add,color: Colors.white,),
-                ),
-              )
+              AddButtonWidget(),
             ],
           ),
         ),
@@ -73,3 +58,4 @@ class Stories extends StatelessWidget {
     );
   }
 }
+

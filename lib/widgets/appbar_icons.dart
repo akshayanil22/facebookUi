@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AppBarIcons extends StatelessWidget {
-  const AppBarIcons({Key? key,required this.iconButton}) : super(key: key);
+  const AppBarIcons({Key? key,required this.iconButton,this.size=40}) : super(key: key);
 
   final IconData iconButton;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +15,8 @@ class AppBarIcons extends StatelessWidget {
         shape: BoxShape.circle,
       ),
       child: Container(
-        width: 40,
-        height: 40,
+        width: size,
+        height: size,
         child: IconButton(
           icon: Icon(iconButton),
           color: Colors.black,
