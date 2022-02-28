@@ -2,6 +2,7 @@ import 'package:facebook_ui/stories.dart';
 import 'package:flutter/material.dart';
 
 import '../reels.dart';
+import '../rooms.dart';
 
 class StoriesReelsRoomSection extends StatefulWidget {
   const StoriesReelsRoomSection({Key? key}) : super(key: key);
@@ -67,9 +68,7 @@ class _StoriesReelsRoomSectionState extends State<StoriesReelsRoomSection>
                 child: TabBarView(controller: _tabController, children: [
                  Stories(),
                   Reels(),
-                  Center(
-                    child: Text('Rooms'),
-                  ),
+                  Rooms(),
                 ]),
               ),
             ],

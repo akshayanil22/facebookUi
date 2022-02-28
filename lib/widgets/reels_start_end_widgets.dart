@@ -4,8 +4,9 @@ import 'create_reel_button.dart';
 
 class ReelsStartEndWidgets extends StatelessWidget {
   final bool isStart;
+  final bool isReels;
 
-  ReelsStartEndWidgets({required this.isStart});
+  ReelsStartEndWidgets({required this.isStart,this.isReels=true});
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +17,12 @@ class ReelsStartEndWidgets extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       decoration: isStart
           ? BoxDecoration(
-              gradient: const LinearGradient(
+              gradient:  LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
-                  Colors.pink,
-                  Colors.orange,
+                  isReels?Colors.pink:Colors.deepPurpleAccent,
+                  isReels?Colors.orange:Colors.deepPurple,
                 ],
               ),
               borderRadius: BorderRadius.circular(20),
@@ -36,12 +37,12 @@ class ReelsStartEndWidgets extends StatelessWidget {
             height: 50,
           ),
           isStart
-              ? CreateReelButton()
+              ? CreateReelButton(icon: isReels?Icons.video_library:Icons.video_call,iconColor: isReels?Colors.orange:Colors.deepPurple,)
               : AppBarIcons(iconButton: Icons.arrow_forward,size: 60),
           Spacer(),
           isStart
               ? Text(
-                  'Create reel',
+                  isReels?'Create reel':'Create Room',
                   style: TextStyle(color: Colors.white),
                 )
               : Text(
