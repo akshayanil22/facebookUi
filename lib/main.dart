@@ -2,7 +2,7 @@ import 'package:facebook_ui/widgets/appbar_icons.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
 
-void main()=>runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -16,12 +16,18 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             elevation: 0,
             backgroundColor: Colors.white,
-            title: Text('facebook',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.blue[700]),),
-            actions: [
+            title: Text(
+              'facebook',
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue[700]),
+            ),
+            actions: const [
               AppBarIcons(iconButton: Icons.search),
               AppBarIcons(iconButton: Icons.message),
             ],
-            bottom: TabBar(
+            bottom: const TabBar(
               labelColor: Colors.blue,
               unselectedLabelColor: Colors.black54,
               tabs: [
@@ -34,16 +40,26 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          body: Padding(
+          body: const Padding(
             padding: EdgeInsets.only(top: 10),
             child: TabBarView(
               children: [
                 Home(),
-                Center(child: Text('Video'),),
-                Center(child: Text('Store'),),
-                Center(child: Text('Profile'),),
-                Center(child: Text('Notification'),),
-                Center(child: Text('Menu'),),
+                Center(
+                  child: Text('Video'),
+                ),
+                Center(
+                  child: Text('Store'),
+                ),
+                Center(
+                  child: Text('Profile'),
+                ),
+                Center(
+                  child: Text('Notification'),
+                ),
+                Center(
+                  child: Text('Menu'),
+                ),
               ],
             ),
           ),
