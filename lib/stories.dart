@@ -34,7 +34,10 @@ class Stories extends StatelessWidget {
                   )
                 ],
               ),
-              AddButtonWidget(),
+              Positioned(
+                  bottom: 40,
+                  left: 40,
+                  child: AddButtonWidget()),
             ],
           ),
         ),

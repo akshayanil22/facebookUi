@@ -45,7 +45,9 @@ class PostWidget extends StatelessWidget {
           Text(caption),
           Column(
             children: [
-              Image.asset(postImage,),
+              Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Image.asset(postImage,fit: BoxFit.cover,)),
               Container(
                 padding: EdgeInsets.all(5),
                 child: Row(
@@ -64,6 +66,14 @@ class PostWidget extends StatelessWidget {
                     Text(comments+'Comments')
                   ],
                 ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  TextButton.icon(onPressed: (){}, icon: Icon(Icons.thumb_up_alt_outlined), label: Text('Like'),style: TextButton.styleFrom(primary: Colors.grey),),
+                  TextButton.icon(onPressed: (){}, icon: Icon(Icons.mode_comment_outlined), label: Text('Comment'),style: TextButton.styleFrom(primary: Colors.grey)),
+                  TextButton.icon(onPressed: (){}, icon: Icon(Icons.send), label: Text('Send'),style: TextButton.styleFrom(primary: Colors.grey)),
+                ],
               ),
               Divider(
                 thickness: 10,
