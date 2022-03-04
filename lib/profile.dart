@@ -1,4 +1,5 @@
 import 'package:facebook_ui/sections/friends_section.dart';
+import 'package:facebook_ui/sections/status_section_in_profile.dart';
 import 'package:facebook_ui/widgets/appbar_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -200,6 +201,9 @@ class Profile extends StatelessWidget {
         ),
         Divider(thickness: 1,),
         FriendsSection(),
+        Divider(thickness: 10,),
+        StatusSectionInProfile(),
+        Divider(thickness: 10,),
       ],
     );
   }
