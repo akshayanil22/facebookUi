@@ -1,3 +1,4 @@
+import 'package:facebook_ui/sections/friends_section.dart';
 import 'package:facebook_ui/widgets/appbar_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +69,8 @@ class Profile extends StatelessWidget {
                             ),
                             ElevatedButton.icon(
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.blueGrey[50],onPrimary: Colors.black),
+                                  primary: Colors.blueGrey[50],
+                                  onPrimary: Colors.black),
                               onPressed: () {},
                               icon: Icon(Icons.edit),
                               label: Text('Edit Profile'),
@@ -76,8 +78,7 @@ class Profile extends StatelessWidget {
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   primary: Colors.blueGrey[50],
-                                onPrimary: Colors.black
-                              ),
+                                  onPrimary: Colors.black),
                               onPressed: () {},
                               child: Icon(Icons.more_horiz),
                             ),
@@ -89,7 +90,116 @@ class Profile extends StatelessWidget {
             ],
           ),
         ),
+        Divider(
+          thickness: 1,
+        ),
+        Container(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.history_edu,
+                    color: Colors.grey,
+                  ),
+                  Text('Studied BCOM at .........College')
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.history_edu,
+                    color: Colors.grey,
+                  ),
+                  Text('Went to .........College')
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.history_edu,
+                    color: Colors.grey,
+                  ),
+                  Text('Went to .........College')
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.home,
+                    color: Colors.grey,
+                  ),
+                  Text('Lives in .....')
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.location_pin,
+                    color: Colors.grey,
+                  ),
+                  Text('From .......')
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.timer,
+                    color: Colors.grey,
+                  ),
+                  Text('Joined June 2013')
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.workspaces_outline,
+                    color: Colors.grey,
+                  ),
+                  Text('Followed by 53 people')
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.more_horiz,
+                    color: Colors.grey,
+                  ),
+                  Text('See your About info')
+                ],
+              ),
+              SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.blue[100]),
+                    onPressed: (){}, child: Text('Edit public detailes',style: TextStyle(color: Colors.blue[800]),),)),
+            ],
+          ),
+        ),
         Divider(thickness: 1,),
+        FriendsSection(),
       ],
     );
   }
