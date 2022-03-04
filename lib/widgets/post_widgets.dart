@@ -11,7 +11,7 @@ class PostWidget extends StatelessWidget {
   final String time;
   final String caption;
 
-  PostWidget({required this.caption,required this.time,required this.profileName,required this.profileImage,required this.postImage,required this.likes,required this.comments});
+  const PostWidget({Key? key,required this.caption,required this.time,required this.profileName,required this.profileImage,required this.postImage,required this.likes,required this.comments}): super(key: key);
 
   @override
   Widget build(BuildContext context) {

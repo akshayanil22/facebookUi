@@ -1,3 +1,4 @@
+import 'package:facebook_ui/videos.dart';
 import 'package:facebook_ui/widgets/appbar_icons.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
@@ -45,9 +46,7 @@ class MyApp extends StatelessWidget {
             child: TabBarView(
               children: [
                 Home(),
-                Center(
-                  child: Text('Video'),
-                ),
+                Videos(),
                 Center(
                   child: Text('Store'),
                 ),
