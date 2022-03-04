@@ -15,8 +15,7 @@ class YouMayKnowSection extends StatelessWidget {
             leading: Text('People You May Know'),
             trailing: Icon(Icons.more_horiz),
           ),
-          Container(
-            height: 350,
+          Expanded(
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [

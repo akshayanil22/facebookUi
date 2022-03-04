@@ -1,3 +1,4 @@
+import 'package:facebook_ui/profile.dart';
 import 'package:facebook_ui/videos.dart';
 import 'package:facebook_ui/widgets/appbar_icons.dart';
 import 'package:flutter/material.dart';
@@ -50,9 +51,7 @@ class MyApp extends StatelessWidget {
                 Center(
                   child: Text('Store'),
                 ),
-                Center(
-                  child: Text('Profile'),
-                ),
+                Profile(),
                 Center(
                   child: Text('Notification'),
                 ),

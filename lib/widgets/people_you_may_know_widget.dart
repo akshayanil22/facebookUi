@@ -10,7 +10,7 @@ class PeopleYouMayKnowWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 330,
+      // height: 330,
       width: 250,
       clipBehavior: Clip.hardEdge,
       margin: const EdgeInsets.symmetric(horizontal: 5),
