@@ -81,7 +81,7 @@ class StatusSectionInProfile extends StatelessWidget {
                   color: Colors.purple,
                 ),
                 label: Text(
-                  'Live event',
+                  'Life event',
                   style: TextStyle(color: Colors.black),
                 ),
               ),
