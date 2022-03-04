@@ -1,62 +1,121 @@
-import 'package:facebook_ui/sections/post_section.dart';
 import 'package:facebook_ui/sections/video_section.dart';
 import 'package:facebook_ui/widgets/appbar_icons.dart';
 import 'package:flutter/material.dart';
 
-class Videos extends StatelessWidget {
+class Videos extends StatefulWidget {
   const Videos({Key? key}) : super(key: key);
+
+  @override
+  State<Videos> createState() => _VideosState();
+}
+
+class _VideosState extends State<Videos> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  var selectedIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: 6);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                children: [
-                  Text(
-                    'Watch',
-                    style:
-                        TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
-                  ),
-                  Spacer(),
-                  AppBarIcons(iconButton: Icons.person),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  AppBarIcons(
-                    iconButton: Icons.search,
-                  ),
-                ],
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Row(
+            children: const[
+              Text(
+                'Watch',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
               ),
-            ),
-            SizedBox(
-              height: 35,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  SizedBox(width: 10,),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 2),
-                    decoration: BoxDecoration(
-                      color: Colors.blue[200],
-                      borderRadius: BorderRadius.circular(20)
-                    ),
-                      child: TextButton(onPressed: () {}, child: Text('For You',style: TextStyle(color: Colors.blue[800]),))),
-                  TextButton(onPressed: () {}, child: Text('Live',style: TextStyle(color: Colors.black),),),
-                  TextButton(onPressed: () {}, child: Text('Music',style: TextStyle(color: Colors.black),),),
-                  TextButton(onPressed: () {}, child: Text('Gaming',style: TextStyle(color: Colors.black),),),
-                  TextButton(onPressed: () {}, child: Text('Following',style: TextStyle(color: Colors.black),),),
-                  TextButton(onPressed: () {}, child: Text('Saved',style: TextStyle(color: Colors.black),),),
-                ],
+              Spacer(),
+              AppBarIcons(iconButton: Icons.person),
+              SizedBox(
+                width: 5,
               ),
-            ),
-            Divider(thickness: 4,),
-          ],
+              AppBarIcons(
+                iconButton: Icons.search,
+              ),
+            ],
+          ),
         ),
-        VideoSection(),
+        Container(
+          height: 30,
+          child: TabBar(
+          indicator: BoxDecoration(
+            color: Colors.blue[100],
+            borderRadius: BorderRadius.circular(20),
+          ),
+              labelColor: Colors.blue[700],
+            unselectedLabelColor: Colors.black,
+            isScrollable: true,
+              controller: _tabController,
+              tabs: const[
+                Text('For You'),
+                Text('Live'),
+                Text('Music'),
+                Text('Gaming'),
+                Text('Following'),
+                Text('Saved'),
+              ],
+              onTap: (int index) {
+                setState(() {
+                  selectedIndex = index;
+                  _tabController.animateTo(index);
+                });
+              }),
+        ),
+        const Divider(
+          thickness: 4,
+        ),
+        IndexedStack(
+          children: [
+            Visibility(
+              child: const VideoSection(),
+              maintainState: true,
+              visible: selectedIndex == 0,
+            ),Visibility(
+              child: Center(
+                child: Text(selectedIndex.toString()),
+              ),
+              maintainState: true,
+              visible: selectedIndex == 1,
+            ),Visibility(
+              child: Center(
+                child: Text(selectedIndex.toString()),
+              ),
+              maintainState: true,
+              visible: selectedIndex == 2,
+            ),
+            Visibility(
+              child: Center(child: Text(selectedIndex.toString())),
+              maintainState: true,
+              visible: selectedIndex == 3,
+            ),Visibility(
+              child: Center(
+                child: Text(selectedIndex.toString()),
+              ),
+              maintainState: true,
+              visible: selectedIndex == 4,
+            ),Visibility(
+              child: Center(
+                child: Text(selectedIndex.toString()),
+              ),
+              maintainState: true,
+              visible: selectedIndex == 5,
+            ),
+          ],
+          index: selectedIndex,
+        ),
       ],
     );
   }
